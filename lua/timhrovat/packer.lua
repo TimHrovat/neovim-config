@@ -13,12 +13,14 @@ return require('packer').startup(function(use)
         requires = { { 'nvim-lua/plenary.nvim' } }
     }
 
-    use {
-        'olimorris/onedarkpro.nvim',
-        config = function()
-            vim.cmd('colorscheme onedark')
-        end
-    }
+    -- use {
+    --     'olimorris/onedarkpro.nvim',
+    --     config = function()
+    --         vim.cmd('colorscheme onedark')
+    --     end
+    -- }
+
+    use { "catppuccin/nvim", as = "catppuccin" }
 
     use(
         'nvim-treesitter/nvim-treesitter',
@@ -62,8 +64,6 @@ return require('packer').startup(function(use)
 
     use { 'codota/tabnine-nvim', run = "./dl_binaries.sh" }
 
-    use { 'windwp/nvim-ts-autotag' }
-
     use {
         'numToStr/Comment.nvim',
         config = function()
@@ -87,8 +87,6 @@ return require('packer').startup(function(use)
         },
     }
 
-    use 'karb94/neoscroll.nvim'
-
     use {
         "ggandor/leap.nvim",
         config = function() require("leap").set_default_keymaps() end
@@ -101,7 +99,13 @@ return require('packer').startup(function(use)
         requires = { 'nvim-tree/nvim-web-devicons', opt = true }
     }
 
-    use 'nvim-pack/nvim-spectre'
+    use "nvim-pack/nvim-spectre"
 
-    use "lukas-reineke/indent-blankline.nvim"
+    use 'lukas-reineke/indent-blankline.nvim'
+
+    use 'APZelos/blamer.nvim'
+
+    use "tpope/vim-surround"
+
+    use "windwp/nvim-ts-autotag"
 end)

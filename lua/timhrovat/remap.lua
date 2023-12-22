@@ -45,3 +45,10 @@ vim.keymap.set("n", "<leader>t", ':split | term<CR>i')
 vim.keymap.set("i", "(", "()<left>")
 vim.keymap.set("i", "[", "[]<left>")
 vim.keymap.set("i", "{", "{}<left>")
+vim.keymap.set("i", "\"", "\"\"<left>")
+vim.keymap.set("i", "'", "''<left>")
+
+vim.keymap.set("n", "<leader>wq", "<C-w><S-w>")
+vim.keymap.set("n", "<leader>we", "<C-w><C-w>")
+vim.keymap.set("n", "<leader>ww", "<C-w><C-v><C-w><C-w>")
+
