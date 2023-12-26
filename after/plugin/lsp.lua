@@ -7,6 +7,7 @@ lsp.ensure_installed({
     'eslint',
     'tailwindcss',
     'cssls',
+    'jdtls',
 })
 
 lsp.on_attach(function(client, bufnr)

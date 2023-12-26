@@ -108,4 +108,6 @@ return require('packer').startup(function(use)
     use "tpope/vim-surround"
 
     use "windwp/nvim-ts-autotag"
+
+    use 'mfussenegger/nvim-jdtls'
 end)
