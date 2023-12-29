@@ -44,7 +44,7 @@ lsp.setup()
 
 local cmp = require("cmp")
 local cmp_select = { behavior = cmp.SelectBehavior.Select }
-require("luasnip.loaders.from_vscode").lazy_load()
+local luasnip = require('luasnip')
 
 cmp.setup({
     sources = {
@@ -68,3 +68,40 @@ cmp.setup({
         end,
     },
 })
+
+local snip = luasnip.snippet
+local node = luasnip.snippet_node
+local text = luasnip.text_node
+local insert = luasnip.insert_node
+local func = luasnip.function_node
+local choice = luasnip.choice_node
+local dynamicn = luasnip.dynamic_node
+
+luasnip.add_snippets(nil, {
+    all = {
+        snip({
+            trig = "phpdoc",
+            namr = "phpdoc",
+            dscr = "Generates a phpdoc for a function",
+        }, {
+            text({
+                "/**",
+                " * ",
+            }),
+            insert(1, "DESC"),
+            text({
+                "",
+                " * ",
+                " * @param PARAM",
+                " * @return RETURN",
+                " * ",
+                " * @author Tim Hrovat <tim.hrovat@easistent.com>",
+                " */",
+            }),
+            insert(0),
+        }),
+    },
+})
+
+vim.keymap.set({"i", "s"}, "<C-g>", function() luasnip.jump(1) end)
+vim.keymap.set({"i", "s"}, "<C-m>", function() luasnip.jump(-1) end)

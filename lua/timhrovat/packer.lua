@@ -13,12 +13,9 @@ return require('packer').startup(function(use)
         requires = { { 'nvim-lua/plenary.nvim' } }
     }
 
-    -- use {
-    --     'olimorris/onedarkpro.nvim',
-    --     config = function()
-    --         vim.cmd('colorscheme onedark')
-    --     end
-    -- }
+    use {
+        'olimorris/onedarkpro.nvim',
+    }
 
     use { "catppuccin/nvim", as = "catppuccin" }
 
@@ -110,4 +107,16 @@ return require('packer').startup(function(use)
     use "windwp/nvim-ts-autotag"
 
     use 'mfussenegger/nvim-jdtls'
+
+    use({
+        "hinell/duplicate.nvim",
+        setup = function()
+            vim.g["duplicate-nvim-config"] = {
+                visual = {
+                    selectAfter = true,     -- true to select duplicated textpacker
+                    block       = true      -- true to enable block-wise duplication
+                }
+            }
+        end
+    })
 end)

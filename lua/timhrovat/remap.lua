@@ -52,3 +52,6 @@ vim.keymap.set("n", "<leader>wq", "<C-w><S-w>")
 vim.keymap.set("n", "<leader>we", "<C-w><C-w>")
 vim.keymap.set("n", "<leader>ww", "<C-w><C-v><C-w><C-w>")
 
+vim.keymap.set("n", "<C-l>", "20zl", { silent = true })
+vim.keymap.set("n", "<C-h>", "20zh", { silent = true })
+
