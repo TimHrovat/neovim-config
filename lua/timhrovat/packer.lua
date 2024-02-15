@@ -13,18 +13,12 @@ return require('packer').startup(function(use)
         requires = { { 'nvim-lua/plenary.nvim' } }
     }
 
-    use {
-        'olimorris/onedarkpro.nvim',
-    }
-
     use { "catppuccin/nvim", as = "catppuccin" }
 
     use(
         'nvim-treesitter/nvim-treesitter',
-        { run = ':TSUpdate' }
+        { run = ':TSUpdate', tag = '0.9.0' }
     )
-
-    use('nvim-treesitter/playground')
 
     use "nvim-lua/plenary.nvim"
 
@@ -113,10 +107,18 @@ return require('packer').startup(function(use)
         setup = function()
             vim.g["duplicate-nvim-config"] = {
                 visual = {
-                    selectAfter = true,     -- true to select duplicated textpacker
-                    block       = true      -- true to enable block-wise duplication
+                    selectAfter = true, -- true to select duplicated textpacker
+                    block       = true  -- true to enable block-wise duplication
                 }
             }
         end
     })
+
+    use {
+        'kdheepak/tabline.nvim',
+        requires = {
+            { 'hoob3rt/lualine.nvim',         opt = true },
+            { 'kyazdani42/nvim-web-devicons', opt = true }
+        }
+    }
 end)
