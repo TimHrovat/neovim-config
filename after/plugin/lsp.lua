@@ -4,10 +4,9 @@ lsp.ensure_installed({
     'lua_ls',
     'rust_analyzer',
     'tsserver',
-    'eslint',
+    'volar',
     'tailwindcss',
     'cssls',
-    'jdtls',
 })
 
 lsp.on_attach(function(client, bufnr)
@@ -17,8 +16,8 @@ lsp.on_attach(function(client, bufnr)
     vim.keymap.set("n", "K", function() vim.lsp.buf.hover() end, opts)
     vim.keymap.set("n", "<leader>vws", function() vim.lsp.buf.workspace_symbol() end, opts)
     vim.keymap.set("n", "<leader>vd", function() vim.diagnostic.open_float() end, opts)
-    vim.keymap.set("n", "[d", function() vim.diagnostic.goto_next() end, opts)
-    vim.keymap.set("n", "]d", function() vim.diagnostic.goto_prev() end, opts)
+    vim.keymap.set("n", "<leader>k", function() vim.diagnostic.goto_next() end, opts)
+    vim.keymap.set("n", "<leader>j", function() vim.diagnostic.goto_prev() end, opts)
     vim.keymap.set("n", "<leader>vca", function() vim.lsp.buf.code_action() end, opts)
     vim.keymap.set("n", "<leader>vrr", function() vim.lsp.buf.references() end, opts)
     vim.keymap.set("n", "<leader>vrn", function() vim.lsp.buf.rename() end, opts)
@@ -39,6 +38,27 @@ require("lspconfig").lua_ls.setup({
         },
     },
 })
+
+require'lspconfig'.tsserver.setup{
+  init_options = {
+    plugins = {
+      {
+        name = "@vue/typescript-plugin",
+        location = "/Users/timhrovat/.nvm/versions/node/v20.5.1/lib/node_modules/@vue/typescript-plugin",
+        languages = {"javascript", "typescript", "vue"},
+      },
+    },
+  },
+  filetypes = {
+    "javascript",
+    "typescript",
+    "vue",
+  },
+}
+
+require'lspconfig'.volar.setup{
+  filetypes = {'typescript', 'javascript', 'javascriptreact', 'typescriptreact', 'vue', 'json'}
+}
 
 lsp.setup()
 

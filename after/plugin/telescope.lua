@@ -6,7 +6,7 @@ vim.keymap.set('n', '<C-p>', builtin.git_files, {})
 vim.keymap.set('n', '<leader>ps', builtin.live_grep, {})
 
 telescope.setup({
-    file_ignore_patterns = { "node_modules" },
+    file_ignore_patterns = { "node_modules", "**/ckeditor5/**" },
     pickers = {
         find_files = {
             find_command = { 'rg', '--files', '--hidden', '-g', '!.git' },

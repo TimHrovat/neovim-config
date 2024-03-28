@@ -72,9 +72,9 @@ return require('packer').startup(function(use)
     })
 
     use {
-        'DaikyXendo/nvim-tree.lua',
+        'nvim-tree/nvim-tree.lua',
         requires = {
-            'DaikyXendo/nvim-material-icon', -- optional, for file icons
+            'nvim-tree/nvim-web-devicons', -- optional, for file icons
         },
     }
 
@@ -90,6 +90,8 @@ return require('packer').startup(function(use)
         requires = { 'nvim-tree/nvim-web-devicons', opt = true }
     }
 
+    use { 'nvim-tree/nvim-web-devicons' }
+
     use "nvim-pack/nvim-spectre"
 
     use 'lukas-reineke/indent-blankline.nvim'
@@ -99,8 +101,6 @@ return require('packer').startup(function(use)
     use "tpope/vim-surround"
 
     use "windwp/nvim-ts-autotag"
-
-    use 'mfussenegger/nvim-jdtls'
 
     use({
         "hinell/duplicate.nvim",
@@ -113,12 +113,4 @@ return require('packer').startup(function(use)
             }
         end
     })
-
-    use {
-        'kdheepak/tabline.nvim',
-        requires = {
-            { 'hoob3rt/lualine.nvim',         opt = true },
-            { 'kyazdani42/nvim-web-devicons', opt = true }
-        }
-    }
 end)

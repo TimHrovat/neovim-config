@@ -1,4 +1,4 @@
-vim.keymap.set("n", "<leader>pv", function() require 'nvim-tree'.find_file(true) end)
+vim.keymap.set("n", "<leader>pv", ':NvimTreeFindFile<CR>')
 
 vim.keymap.set("v", "J", ":m '>+1<CR>gv=gv")
 vim.keymap.set("v", "K", ":m '<-2<CR>gv=gv")
@@ -20,13 +20,21 @@ vim.keymap.set({ "n", "v" }, "<leader>d", [["_d]])
 
 vim.keymap.set("n", "Q", "<nop>")
 
+function containsFileExtension(str)
+    return string.match(str, "%.vue$") or string.match(str, "%.ts$") or string.match(str, "%.js$")
+end
+
+
 -- format function modified to support blade templates
 vim.keymap.set("n", "<leader>f", function()
     local filename = vim.fn.expand('%:t')
+    local filepath = vim.fn.expand('%:p')
 
     if string.find(filename, '.blade.php') then
         local cmd = string.format("silent!! %s -w %s", vim.fn.shellescape("blade-formatter"), vim.fn.shellescape("%"))
         vim.cmd(cmd)
+    elseif containsFileExtension(filename) then
+        vim.cmd(string.format("silent!! prettier %s --write", filepath))
     else
         vim.lsp.buf.format()
     end
