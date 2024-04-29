@@ -113,4 +113,15 @@ return require('packer').startup(function(use)
             }
         end
     })
+
+    use ({
+        'kristijanhusak/vim-dadbod-ui',
+        requires = {
+            'tpope/vim-dadbod',
+            'kristijanhusak/vim-dadbod-completion',
+        },
+        setup = function()
+            vim.g.db_ui_use_nerd_fonts = 1
+        end
+    })
 end)

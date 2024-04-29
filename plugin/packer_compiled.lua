@@ -237,6 +237,22 @@ _G.packer_plugins = {
     path = "/Users/timhrovat/.local/share/nvim/site/pack/packer/start/vim-blade",
     url = "https://github.com/jwalton512/vim-blade"
   },
+  ["vim-dadbod"] = {
+    loaded = true,
+    path = "/Users/timhrovat/.local/share/nvim/site/pack/packer/start/vim-dadbod",
+    url = "https://github.com/tpope/vim-dadbod"
+  },
+  ["vim-dadbod-completion"] = {
+    loaded = true,
+    path = "/Users/timhrovat/.local/share/nvim/site/pack/packer/start/vim-dadbod-completion",
+    url = "https://github.com/kristijanhusak/vim-dadbod-completion"
+  },
+  ["vim-dadbod-ui"] = {
+    loaded = true,
+    needs_bufread = true,
+    path = "/Users/timhrovat/.local/share/nvim/site/pack/packer/opt/vim-dadbod-ui",
+    url = "https://github.com/kristijanhusak/vim-dadbod-ui"
+  },
   ["vim-surround"] = {
     loaded = true,
     path = "/Users/timhrovat/.local/share/nvim/site/pack/packer/start/vim-surround",
@@ -245,9 +261,16 @@ _G.packer_plugins = {
 }
 
 time([[Defining packer_plugins]], false)
+-- Setup for: vim-dadbod-ui
+time([[Setup for vim-dadbod-ui]], true)
+try_loadstring("\27LJ\2\n6\0\0\2\0\3\0\0056\0\0\0009\0\1\0)\1\1\0=\1\2\0K\0\1\0\25db_ui_use_nerd_fonts\6g\bvim\0", "setup", "vim-dadbod-ui")
+time([[Setup for vim-dadbod-ui]], false)
+time([[packadd for vim-dadbod-ui]], true)
+vim.cmd [[packadd vim-dadbod-ui]]
+time([[packadd for vim-dadbod-ui]], false)
 -- Setup for: duplicate.nvim
 time([[Setup for duplicate.nvim]], true)
-try_loadstring("\27LJ\2\n`\0\0\3\0\6\0\a6\0\0\0009\0\1\0005\1\4\0005\2\3\0=\2\5\1=\1\2\0K\0\1\0\vvisual\1\0\0\1\0\2\16selectAfter\2\nblock\2\26duplicate-nvim-config\6g\bvim\0", "setup", "duplicate.nvim")
+try_loadstring("\27LJ\2\n`\0\0\3\0\6\0\a6\0\0\0009\0\1\0005\1\4\0005\2\3\0=\2\5\1=\1\2\0K\0\1\0\vvisual\1\0\0\1\0\2\nblock\2\16selectAfter\2\26duplicate-nvim-config\6g\bvim\0", "setup", "duplicate.nvim")
 time([[Setup for duplicate.nvim]], false)
 time([[packadd for duplicate.nvim]], true)
 vim.cmd [[packadd duplicate.nvim]]
