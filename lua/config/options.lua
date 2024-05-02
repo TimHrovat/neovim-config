@@ -1,3 +1,6 @@
+-- Options are automatically loaded before lazy.nvim startup
+-- Default options that are always set: https://github.com/LazyVim/LazyVim/blob/main/lua/lazyvim/config/options.lua
+-- Add any additional options here
 vim.opt.relativenumber = true
 vim.opt.number = true
 
@@ -26,3 +29,9 @@ vim.opt.colorcolumn = "80"
 vim.g.mapleader = " "
 
 vim.o.splitbelow = true
+
+vim.opt.guicursor = ""
+
+vim.g.blamer_enabled = true
+vim.g.blamer_delay = 300
+vim.g.blamer_show_in_insert_modes = 0
