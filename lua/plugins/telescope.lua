@@ -1,6 +1,9 @@
 return {
     "nvim-telescope/telescope.nvim",
     cmd = "Telescope",
+    -- enabled = function()
+    --     return LazyVim.pick.want() == "telescope"
+    -- end,
     keys = {
         {
             "<leader>pb",
@@ -9,7 +12,7 @@ return {
         },
         {
             "<leader>ps",
-            LazyVim.telescope("live_grep"),
+            LazyVim.pick("live_grep"),
             desc = "Grep (Root Dir)",
         },
         {
@@ -19,7 +22,7 @@ return {
         },
         {
             "<leader>pf",
-            LazyVim.telescope("files"),
+            LazyVim.pick("files"),
             desc = "Find Files (Root Dir)",
         },
     },
