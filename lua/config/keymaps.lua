@@ -7,8 +7,8 @@ vim.keymap.set("n", "<C-d>", "<C-d>zz")
 vim.keymap.set("n", "<C-u>", "<C-u>zz")
 vim.keymap.set("n", "n", "nzzzv")
 vim.keymap.set("n", "N", "Nzzzv")
-vim.keymap.set("n", "<C-l>", "20zl", { silent = true })
-vim.keymap.set("n", "<C-h>", "20zh", { silent = true })
+vim.keymap.set("n", "L", "20zl", { silent = true })
+vim.keymap.set("n", "H", "20zh", { silent = true })
 
 -- handle system clipboard
 vim.keymap.set("x", "<leader>p", [["_dP]])
@@ -20,8 +20,6 @@ vim.keymap.set("n", "Q", "<nop>")
 
 vim.keymap.set("n", "<leader>x", "<cmd>!chmod +x %<CR>", { silent = true })
 
-vim.keymap.set("n", "<leader>wq", "<C-w><S-w>")
-vim.keymap.set("n", "<leader>we", "<C-w><C-w>")
 vim.keymap.set("n", "<leader>ww", "<C-w><C-v><C-w><C-w>")
 
 -- opt + J -> Ô
@@ -33,3 +31,4 @@ vim.keymap.set("v", "Ô", "<CMD>VisualDuplicate +1<CR>")
 vim.keymap.set("v", "", "<CMD>VisualDuplicate -1<CR>")
 
 vim.api.nvim_set_keymap('n', '<leader>fo', ':lua require("conform").format()<CR>', { noremap = true, silent = true })
+
