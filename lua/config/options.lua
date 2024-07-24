@@ -45,3 +45,5 @@ vim.g.dbs = {
     evrtec_local = 'mysql://evrtec:docker@localhost:33066/evrtec',
     evrtec_test_local = 'mysql://evrtec:docker@localhost:33066/testing',
 }
+
+vim.g.blamer_enabled = true

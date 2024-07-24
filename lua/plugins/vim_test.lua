@@ -9,5 +9,5 @@ return {
     vim.keymap.set("n", "<leader>l", ":TestLast<CR>"),
     vim.keymap.set("n", "<leader>g", ":TestVisit<CR>"),
     vim.cmd("let test#strategy = 'vimux'"),
-    vim.cmd("let test#php#phpunit#executable = 'docker exec -it evrtec.web php artisan test'")
+    vim.cmd("let test#php#phpunit#executable = 'docker exec -it evrtec.web php artisan test --config=phpunit.xml'")
 }
