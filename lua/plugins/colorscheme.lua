@@ -37,7 +37,7 @@ return {
                     teal = "#bae6fd", -- <.. class../>
                     yellow = "#fbbf24",
                     sky = "#00d5ed", -- <.../>
-                    blue = "#fb923c", -- orange
+                    blue = "#FD9A6D", -- orange
                     lavender = "#e0f2fe", -- cyan 100
                     text = "#ffedd5", -- neutral 200
                     overlay2 = "#a3a3a3", -- commas
