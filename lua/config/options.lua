@@ -47,3 +47,5 @@ vim.g.dbs = {
 }
 
 vim.g.blamer_enabled = true
+
+vim.g.snacks_animate = false
