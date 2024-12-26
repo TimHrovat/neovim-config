@@ -38,9 +38,4 @@ vim.g.lazyvim_picker = "telescope"
 
 vim.g.lazyvim_php_lsp = "intelephense"
 
-vim.g.dbs = {
-    evrtec_local = 'mysql://evrtec:docker@localhost:33066/evrtec',
-    evrtec_test_local = 'mysql://evrtec:docker@localhost:33066/testing',
-}
-
 vim.g.snacks_animate = false
