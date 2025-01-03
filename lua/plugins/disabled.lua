@@ -13,12 +13,19 @@ return {
         "nvimdev/dashboard-nvim",
         enabled = false,
     },
+
     {
         "folke/noice.nvim",
         enabled = false,
     },
+
     {
         "rcarriga/nvim-notify",
+        enabled = false,
+    },
+
+    {
+        "LintaoAmons/scratch.nvim",
         enabled = false,
     },
 }
